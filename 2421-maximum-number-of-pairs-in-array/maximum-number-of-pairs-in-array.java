@@ -12,17 +12,8 @@ class Solution {
 
         for(int i : freq)
         {
-            int n = i/2;
-            int r = i%2;
-            while(n>0)
-            {
-                pair++;
-                n--;
-            }
-            if(r==1)
-            {
-                no_pair++;
-            }
+           pair += i/2;
+           no_pair += i%2;
         }
 
         return new int[]{pair,no_pair};
