@@ -1,0 +1,11 @@
+class Solution {
+    public String generateTheString(int n) {
+        char ch[] = new char[n];
+        Arrays.fill(ch,'a');
+        if(n%2==0)
+        {
+            ch[n-1] = 'b';
+        }
+        return new String(ch);
+    }
+}
