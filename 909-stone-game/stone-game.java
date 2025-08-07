@@ -5,18 +5,12 @@ class Solution {
         {
             total += i;
         }
-        int frontSum = 0;
+        int sum = 0;
         for(int i=0;i<piles.length;i+=2)
         {
-            frontSum += piles[i];
+            sum += piles[i];
         }
 
-        // int backSum = 0;
-        // for(int i=piles.length-1;i>=0;i-=2)
-        // {
-        //     backSum += piles[i];
-        // }
-
-        return frontSum>total-frontSum || total-frontSum>frontSum;
+        return sum>total-sum || total-sum>sum;
     }
 }
