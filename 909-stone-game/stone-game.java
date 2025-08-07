@@ -11,12 +11,12 @@ class Solution {
             frontSum += piles[i];
         }
 
-        int backSum = 0;
-        for(int i=piles.length-1;i>=0;i-=2)
-        {
-            backSum += piles[i];
-        }
+        // int backSum = 0;
+        // for(int i=piles.length-1;i>=0;i-=2)
+        // {
+        //     backSum += piles[i];
+        // }
 
-        return frontSum>total-frontSum || backSum>total-backSum;
+        return frontSum>total-frontSum || total-frontSum>frontSum;
     }
 }
