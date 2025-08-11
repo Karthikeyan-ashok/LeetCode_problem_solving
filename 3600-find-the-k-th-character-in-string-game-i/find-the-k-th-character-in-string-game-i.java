@@ -1,14 +1,33 @@
 class Solution {
-    public char kthCharacter(int k) {
-        StringBuilder s = new StringBuilder("a");
-        while(s.length()<k)
+    public char check(int k,int step)
+    {
+        if(step==0)
         {
-            int size = s.length();
-            for(int i=0;i<size;i++)
+            return 'a';
+        }
+        else
+        {
+            int half = 1<<step-1;
+            if(k>half)
             {
-                s.append((char)('a'+((s.charAt(i)-'a')+1)%26));
+                char res = check(k-half,step-1);
+                res = res=='z'?'a':(char)(res+1);
+                return res;
+            }
+            else
+            {
+                return check(k,step-1);
             }
         }
-        return s.charAt(k-1);
+    }
+    public char kthCharacter(int k) {
+        int step = 0;
+    
+        while((1<<step)<k)
+        {
+            step++;
+        }
+
+        return check(k,step);
     }
 }
