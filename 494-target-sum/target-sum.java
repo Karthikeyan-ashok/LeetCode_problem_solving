@@ -1,9 +1,8 @@
 class Solution {
-    static int [][]dp;
     
     public static int subSetSum(int [] nums, int sum){
         int n = nums.length;
-        dp = new int[n+1][sum+1];
+        int [][]dp = new int[n+1][sum+1];
 
         for(int i = 0; i <n+1; i++){
             dp[i][0] = 1;
